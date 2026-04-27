@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mimi & Friends — There's A Dinosaur Knocking On My Door</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #fff8f0;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: #F47920;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .site-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+    }
+    nav a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 1rem;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 1; text-decoration: underline; }
+
+    /* HERO */
+    .hero {
+      background: #F47920;
+      padding: 60px 40px 80px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 3.2rem;
+      color: #fff;
+      text-shadow: 2px 3px 0 rgba(0,0,0,0.15);
+      max-width: 700px;
+      margin: 0 auto 12px;
+      line-height: 1.2;
+    }
+    .hero p.tagline {
+      font-size: 1.15rem;
+      color: #fff;
+      opacity: 0.92;
+      margin-bottom: 36px;
+    }
+    .hero img.cover {
+      width: 300px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+    .hero .cta {
+      display: inline-block;
+      margin-top: 36px;
+      background: #fff;
+      color: #F47920;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    /* WAVE DIVIDER */
+    .wave {
+      display: block;
+      width: 100%;
+      background: #F47920;
+    }
+    .wave svg { display: block; }
+
+    /* BOOK SECTION */
+    .book-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 70px 40px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    .book-section img {
+      width: 260px;
+      min-width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    .book-text h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #F47920;
+      margin-bottom: 16px;
+    }
+    .book-text p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 14px;
+    }
+    .credits {
+      margin-top: 24px;
+      font-size: 0.95rem;
+      color: #888;
+      line-height: 1.8;
+    }
+    .credits span { color: #F47920; font-weight: 700; }
+
+    /* ABOUT SECTION */
+    .about-section {
+      background: #fff3e8;
+      padding: 70px 40px;
+    }
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+    .about-inner img.mimi-photo {
+      width: 220px;
+      min-width: 220px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    .about-text h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #F47920;
+      margin-bottom: 16px;
+    }
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 14px;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 70px 40px;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #F47920;
+      margin-bottom: 16px;
+    }
+    .contact-section p {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .contact-section a.email-btn {
+      display: inline-block;
+      background: #F47920;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .contact-section a.email-btn:hover { background: #d4681a; }
+
+    /* FOOTER */
+    footer {
+      background: #F47920;
+      color: #fff;
+      text-align: center;
+      padding: 28px 40px;
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      header { flex-direction: column; gap: 16px; text-align: center; }
+      .book-section, .about-inner { flex-direction: column; text-align: center; }
+      .book-section img, .about-inner img.mimi-photo { width: 200px; min-width: 200px; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-title">Mimi &amp; Friends</div>
+    <nav>
+      <a href="#book">The Book</a>
+      <a href="#about">About Mimi</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>There's A Dinosaur Knocking On My Door</h1>
+    <p class="tagline">A joyful Shabbat board book for little ones</p>
+    <img class="cover" src="images/cover.jpg" alt="Book cover — There's A Dinosaur Knocking On My Door">
+    <br>
+    <a class="cta" href="#book">Learn More 🦕</a>
+  </section>
+
+  <div class="wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60">
+      <path fill="#fff8f0" d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <section class="book-section" id="book">
+    <img src="images/cover.jpg" alt="Book Cover">
+    <div class="book-text">
+      <h2>About the Book</h2>
+      <p>
+        When a friendly dinosaur shows up at your door ready to celebrate Shabbat,
+        the fun is just beginning! <em>There's A Dinosaur Knocking On My Door</em>
+        brings the warmth and joy of Shabbat to life through playful adapted lyrics,
+        vibrant illustrations, and a dinosaur who just wants to be part of the celebration.
+      </p>
+      <p>
+        Perfect for toddlers and young children, this board book makes Shabbat
+        something kids will look forward to all week long.
+      </p>
+      <div class="credits">
+        <span>Adapted Shabbat Lyrics</span> by Mimi Greisman<br>
+        <span>Original Music &amp; Lyrics</span> by Linda Arnold<br>
+        <span>Illustrated</span> by Maureen Arnow
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <img class="mimi-photo" src="images/mimi.jpg" alt="Mimi Greisman">
+      <div class="about-text">
+        <h2>About Mimi</h2>
+        <p>
+          Mimi Greisman is a children's author, musician, and educator with a lifelong
+          passion for bringing Jewish traditions to life for young children.
+        </p>
+        <p>
+          Inspired by the music of Linda Arnold, Mimi adapted the lyrics to weave
+          the spirit of Shabbat into a story that families will return to again and again.
+        </p>
+        <p>
+          She lives in San Francisco with her family — and occasionally a dinosaur or two.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <h2>Get in Touch</h2>
+    <p>
+      For inquiries about the book, school visits, or just to say hello —
+      Mimi would love to hear from you.
+    </p>
+    <a class="email-btn" href="mailto:mimi@mimiandfriends.com">✉️ Send a Message</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Mimi Greisman · mimiandfriends.com</p>
+  </footer>
+
+</body>
+</html>
