@@ -9,6 +9,13 @@
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
     rel="stylesheet">
   <style>
+    :root {
+      --brand-blue: #0038B8;
+      --brand-blue-dark: #002c90;
+      --paper: #fff8f0;
+      --paper-blue: #eaf0ff;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -17,14 +24,13 @@
 
     body {
       font-family: 'Nunito', sans-serif;
-      background: #fff8f0;
+      background: var(--brand-blue);
       color: #333;
     }
 
     /* HEADER */
     header {
-      background: #0038B8;
-      /* background: #F47920; */
+      background: var(--brand-blue);
       padding: 24px 40px;
       display: flex;
       align-items: center;
@@ -56,7 +62,7 @@
 
     /* HERO */
     .hero {
-      background: #F47920;
+      background: var(--brand-blue);
       padding: 60px 40px 80px;
       text-align: center;
     }
@@ -89,7 +95,7 @@
       display: inline-block;
       margin-top: 36px;
       background: #fff;
-      color: #F47920;
+      color: var(--brand-blue);
       font-family: 'Nunito', sans-serif;
       font-weight: 700;
       font-size: 1.1rem;
@@ -109,7 +115,7 @@
     .wave {
       display: block;
       width: 100%;
-      background: #F47920;
+      background: var(--brand-blue);
     }
 
     .wave svg {
@@ -124,6 +130,8 @@
       display: flex;
       align-items: center;
       gap: 60px;
+      background: var(--paper);
+      border-radius: 28px;
     }
 
     .book-section img {
@@ -136,7 +144,7 @@
     .book-text h2 {
       font-family: 'Caveat', cursive;
       font-size: 2rem;
-      color: #F47920;
+      color: var(--brand-blue);
       margin-bottom: 16px;
     }
 
@@ -155,13 +163,13 @@
     }
 
     .credits span {
-      color: #F47920;
+      color: var(--brand-blue);
       font-weight: 700;
     }
 
     /* ABOUT SECTION */
     .about-section {
-      background: #fff3e8;
+      background: var(--paper-blue);
       padding: 70px 40px;
     }
 
@@ -185,7 +193,7 @@
     .about-text h2 {
       font-family: 'Caveat', cursive;
       font-size: 2rem;
-      color: #F47920;
+      color: var(--brand-blue);
       margin-bottom: 16px;
     }
 
@@ -202,12 +210,14 @@
       margin: 0 auto;
       padding: 70px 40px;
       text-align: center;
+      background: var(--paper);
+      border-radius: 28px;
     }
 
     .contact-section h2 {
       font-family: 'Caveat', cursive;
       font-size: 2rem;
-      color: #F47920;
+      color: var(--brand-blue);
       margin-bottom: 16px;
     }
 
@@ -220,7 +230,7 @@
 
     .contact-section a.email-btn {
       display: inline-block;
-      background: #F47920;
+      background: var(--brand-blue);
       color: #fff;
       font-weight: 700;
       font-size: 1rem;
@@ -231,12 +241,12 @@
     }
 
     .contact-section a.email-btn:hover {
-      background: #d4681a;
+      background: var(--brand-blue-dark);
     }
 
     /* FOOTER */
     footer {
-      background: #F47920;
+      background: var(--brand-blue);
       color: #fff;
       text-align: center;
       padding: 28px 40px;
