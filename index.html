@@ -74,7 +74,11 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
       gap: 44px;
-      align-items: center;
+      align-items: start;
+    }
+
+    .hero-title {
+      grid-column: 1 / -1;
     }
 
     .hero-copy {
@@ -97,8 +101,8 @@
       font-size: 4rem;
       color: #fff;
       text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
-      max-width: 640px;
-      margin-bottom: 14px;
+      max-width: 860px;
+      margin-bottom: 0;
       line-height: 1.1;
     }
 
@@ -360,6 +364,10 @@
         text-align: center;
       }
 
+      .hero-title {
+        text-align: center;
+      }
+
       .hero h1 {
         font-size: 2.7rem;
         margin-left: auto;
@@ -395,9 +403,11 @@
 
   <section class="hero">
     <div class="hero-inner">
+      <div class="hero-title">
+        <h1>There's A Dinosaur Knocking On My Door</h1>
+      </div>
       <div class="hero-copy">
         <p class="hero-kicker">Watch Mimi sing the dinosaur song</p>
-        <h1>There's A Dinosaur Knocking On My Door</h1>
         <p class="tagline">A joyful Shabbat board book for little ones, paired with Mimi's singalong performance of the dinosaur song that inspired the story.</p>
         <div class="hero-actions">
           <a class="cta" href="#book">Learn More</a>
