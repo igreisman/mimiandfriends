@@ -429,6 +429,39 @@
       (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
     ml('account', '2303067');
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const contactSection = document.getElementById('contact');
+      const replacementText = 'Be the first to know when the book is available';
+
+      if (!contactSection) {
+        return;
+      }
+
+      function updateMailerLiteCopy() {
+        const signupCopy = contactSection.querySelector('.ml-form-embedContent p');
+
+        if (!signupCopy) {
+          return false;
+        }
+
+        signupCopy.textContent = replacementText;
+        return true;
+      }
+
+      if (updateMailerLiteCopy()) {
+        return;
+      }
+
+      const observer = new MutationObserver(function () {
+        if (updateMailerLiteCopy()) {
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(contactSection, { childList: true, subtree: true });
+    });
+  </script>
   <!-- End MailerLite Universal -->
 </head>
 
