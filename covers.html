@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mimi &amp; Friends — Covers of the Dinosaur Song</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --brand-blue: #0038B8;
+      --brand-blue-dark: #002c90;
+      --paper: #fff8f0;
+      --paper-blue: #eaf0ff;
+      --orange: #f26d1b;
+      --orange-soft: #fdf0e3;
+      --text: #24324b;
+      --muted: #5c6b86;
+      --line: #d9e2ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 26%),
+        linear-gradient(180deg, #0a44cd 0%, var(--brand-blue) 320px, var(--paper) 320px, var(--paper) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      background: transparent;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .site-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .site-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 22px;
+    }
+
+    nav a {
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.92;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 32px 40px 64px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 360px);
+      gap: 28px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      color: #fff;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 4rem;
+      line-height: 1.05;
+      text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+      margin-bottom: 12px;
+    }
+
+    .hero-copy p {
+      max-width: 760px;
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 26px;
+      padding: 22px;
+      color: #fff;
+      box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-card span {
+      display: block;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: -14px auto 0;
+      padding: 0 40px 72px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(217, 226, 255, 0.8);
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: 0 18px 36px rgba(0, 56, 184, 0.08);
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .section h2 {
+      font-size: 1.45rem;
+      color: var(--brand-blue);
+    }
+
+    .section p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e3e8f6;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .card a,
+    .card .card-static {
+      display: block;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: var(--paper-blue);
+    }
+
+    .card-body {
+      padding: 14px 15px 16px;
+    }
+
+    .card-name {
+      font-size: 0.98rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 5px;
+    }
+
+    .card-views {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .card-note {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: #7f8aa3;
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    .card-static {
+      padding-top: 8px;
+    }
+
+    .card-static .card-body {
+      min-height: 124px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        linear-gradient(135deg, var(--orange-soft), #fff 72%);
+    }
+
+    .cta-strip {
+      margin-top: 8px;
+      padding: 28px 32px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #fff2e8 0%, #ffffff 100%);
+      border: 1px solid #f4d7c0;
+      text-align: center;
+    }
+
+    .cta-strip p {
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .cta-strip a {
+      color: var(--orange);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .cta-strip a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 40px 36px;
+      color: #6f7b90;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    footer a {
+      color: var(--brand-blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      header,
+      .hero,
+      main,
+      footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 3.1rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .section,
+      .cta-strip {
+        padding: 20px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="site-brand" href="index.html">
+      <img src="images/logo.png" alt="Mimi &amp; Friends logo">
+      <div class="site-title">Mimi &amp; Friends</div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#book">The Book</a>
+      <a href="index.html#about">About Mimi</a>
+      <a href="covers.html" aria-current="page">Covers</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Community Covers</div>
+        <h1>The Song Lives On</h1>
+        <p>
+          Over the years, families, synagogues, schools, camps, and musicians have recorded their own versions of
+          Mimi's Shabbat lyrics. This page celebrates the covers we've found so far and the communities that have kept
+          the song moving from one generation to the next.
+        </p>
+      </div>
+      <div class="hero-card">
+        <strong>31 covers</strong>
+        <span>Found across YouTube, SoundCloud, Apple Music, and Spotify.</span>
+        <strong style="margin-top: 14px;">976,000+</strong>
+        <span>Combined views and streams from the covers tracked so far.</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" aria-labelledby="institutions-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="institutions-heading">Institutions &amp; Organizations</h2>
+          <p>Schools, synagogues, camps, and community organizations that have shared the song with their families, listed alphabetically.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=VMPIjRpP1ZU" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/VMPIjRpP1ZU/mqdefault.jpg" alt="Columbia Jewish Congregation cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Columbia Jewish Congregation</div>
+              <div class="card-views">98 views · Columbia, MD</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=fPEkaaPN7yI" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/fPEkaaPN7yI/mqdefault.jpg" alt="Finchley Reform Synagogue cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Finchley Reform Synagogue</div>
+              <div class="card-views">32,977 views · London, England</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=OndDGP2dpFw" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/OndDGP2dpFw/mqdefault.jpg" alt="Jewish Federation of Greater Dayton cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Jewish Federation of Greater Dayton</div>
+              <div class="card-views">152 views · Dayton, OH</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=sDyzr9FPxds" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/sDyzr9FPxds/mqdefault.jpg" alt="OmahaJCC cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">OmahaJCC</div>
+              <div class="card-views">49 views · Omaha, NE</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=vN9NhhCuWng" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/vN9NhhCuWng/mqdefault.jpg" alt="Samuel Field Y Day Camp cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Samuel Field Y Day Camp</div>
+              <div class="card-views">843 views · Little Neck, NY</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=QQFexvQIlAY" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/QQFexvQIlAY/mqdefault.jpg" alt="SiegelJCC cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">SiegelJCC</div>
+              <div class="card-views">838 views · Wilmington, DE</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=wBP7-ZQXhpY" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/wBP7-ZQXhpY/mqdefault.jpg" alt="Temple Adat Elohim cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Temple Adat Elohim</div>
+              <div class="card-views">1,200 views · Thousand Oaks, CA</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-static">
+            <div class="card-body">
+              <div class="card-name">Temple Emanu-El NYC</div>
+              <div class="card-views">280 views · New York, NY</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=MIyXEBh_vuI" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/MIyXEBh_vuI/mqdefault.jpg" alt="The Weinstein School cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">The Weinstein School</div>
+              <div class="card-views">2,900 views · Marcus JCC, Atlanta, GA</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=ukWCSB9tSks" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/ukWCSB9tSks/mqdefault.jpg" alt="TKC Preschool cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">TKC Preschool</div>
+              <div class="card-views">1,200 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-static">
+            <div class="card-body">
+              <div class="card-name">WJCC Preschool — Ladybugs</div>
+              <div class="card-views">456 views</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=WQhpZAJWf8U" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/WQhpZAJWf8U/mqdefault.jpg" alt="Wilshire Boulevard Temple cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Wilshire Boulevard Temple</div>
+              <div class="card-views">26,000 views · Los Angeles, CA</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="artists-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="artists-heading">Individual Artists</h2>
+          <p>Performers and creators who recorded their own versions and helped the song reach new audiences, listed alphabetically.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=RH2nlsdAkqM" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/RH2nlsdAkqM/mqdefault.jpg" alt="Andi Joseph cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Andi Joseph</div>
+              <div class="card-views">8,600 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <div class="card-static">
+            <div class="card-body">
+              <div class="card-name">Ariel Kohll</div>
+              <div class="card-views">SoundCloud</div>
+              <div class="card-note">Jewish Youth Jams playlist</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=OR7-SetsqE4" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/OR7-SetsqE4/mqdefault.jpg" alt="bytownnukes cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">bytownnukes</div>
+              <div class="card-views">397 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=SHzDRS0Ise4" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/SHzDRS0Ise4/mqdefault.jpg" alt="Debbie Brukman cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Debbie Brukman</div>
+              <div class="card-views">98,000 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=5j1GKUuH6Gg" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/5j1GKUuH6Gg/mqdefault.jpg" alt="Dyli cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Dyli</div>
+              <div class="card-views">4,200 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=0NW03o1e84U" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/0NW03o1e84U/mqdefault.jpg" alt="Gabriel B cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Gabriel B</div>
+              <div class="card-views">12,000 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=WbS8wYioMUo" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/WbS8wYioMUo/mqdefault.jpg" alt="Hazz'n Dan cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Hazz'n Dan</div>
+              <div class="card-views">8,600 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=hr1Y1cKPh5w" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/hr1Y1cKPh5w/mqdefault.jpg" alt="Isaac Zones cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Isaac Zones</div>
+              <div class="card-views">6,300 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=FvhkTwL9Qek" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/FvhkTwL9Qek/mqdefault.jpg" alt="Jill Frank cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Jill Frank</div>
+              <div class="card-views">141 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=gng5iLb16wA" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/gng5iLb16wA/mqdefault.jpg" alt="Kayli Joseph cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Kayli Joseph</div>
+              <div class="card-views">1,100 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=dH16pub3N6s" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/dH16pub3N6s/mqdefault.jpg" alt="Kevin Longobart Music cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Kevin Longobart Music</div>
+              <div class="card-views">178 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=o4kpIavDfMs" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/o4kpIavDfMs/mqdefault.jpg" alt="Moshe Weisblum cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Moshe Weisblum</div>
+              <div class="card-views">3,100 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=MoWV70qkiE4" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/MoWV70qkiE4/mqdefault.jpg" alt="Music with Mr. Ari cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Music with Mr. Ari</div>
+              <div class="card-views">3,000 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://youtu.be/yWAKxJjjDVo" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/yWAKxJjjDVo/mqdefault.jpg" alt="Scott Levine cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Scott Levine</div>
+              <div class="card-views">2,375 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=XEovjkXrD4s" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/XEovjkXrD4s/mqdefault.jpg" alt="Shaboom! cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Shaboom! (Isaac Zones)</div>
+              <div class="card-views">731,000 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=RtA7em_YYgc" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/RtA7em_YYgc/mqdefault.jpg" alt="Shira and Friends cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Shira &amp; Friends</div>
+              <div class="card-views">636 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://youtu.be/5OLGU7gxMIU" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/5OLGU7gxMIU/mqdefault.jpg" alt="Stacy Kelly cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Stacy Kelly</div>
+              <div class="card-views">20 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=OuI0_rnpo_o" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/OuI0_rnpo_o/mqdefault.jpg" alt="Susan cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Susan</div>
+              <div class="card-views">9,000 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=wFLmbeGXk2I" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/wFLmbeGXk2I/mqdefault.jpg" alt="the sababasmusic cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">the sababasmusic</div>
+              <div class="card-views">20,000 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=Y335fbLnQGI" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/Y335fbLnQGI/mqdefault.jpg" alt="Zimra Geurts cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Zimra Geurts</div>
+              <div class="card-views">1,300 views</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip" aria-label="Submit another cover">
+      <p>Know of a cover we missed or want to share one with Mimi?</p>
+      <a href="mailto:mimi@mimiandfriends.com">Email mimi@mimiandfriends.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="index.html">Return to mimiandfriends.com</a></p>
+  </footer>
+</body>
+
+</html>
