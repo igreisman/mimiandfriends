@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mimi &amp; Friends — Cover Map</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <style>
+    :root {
+      --brand-blue: #0038b8;
+      --brand-blue-dark: #002c90;
+      --brand-blue-deep: #1f3864;
+      --paper: #fff8f0;
+      --paper-blue: #eaf0ff;
+      --orange: #f26d1b;
+      --orange-deep: #c55a11;
+      --text: #24324b;
+      --muted: #5c6b86;
+      --line: #d9e2ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 26%),
+        linear-gradient(180deg, #0a44cd 0%, var(--brand-blue) 260px, var(--paper) 260px, var(--paper) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .site-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .site-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 22px;
+    }
+
+    nav a {
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.92;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 12px 40px 34px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 360px);
+      gap: 28px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 3.8rem;
+      line-height: 1.05;
+      text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .hero-copy p {
+      max-width: 760px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 26px;
+      padding: 22px;
+      color: #fff;
+      box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 1.95rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-card span {
+      display: block;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 40px 72px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(217, 226, 255, 0.8);
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: 0 18px 36px rgba(0, 56, 184, 0.08);
+      margin-bottom: 26px;
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .stat {
+      min-width: 120px;
+      text-align: center;
+      padding: 14px 16px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--paper-blue), #fff);
+      border: 1px solid #d7e1ff;
+    }
+
+    .stat-number {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--brand-blue-deep);
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 8px 24px 18px;
+      font-size: 0.82rem;
+      color: #444;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+      flex-shrink: 0;
+    }
+
+    .map-wrapper {
+      display: flex;
+      height: 320px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 3px solid var(--brand-blue-deep);
+      background: #dfe8f7;
+    }
+
+    .map-panel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #map-us {
+      flex: 3;
+    }
+
+    #map-uk {
+      flex: 1;
+      border-left: 3px solid var(--brand-blue-deep);
+    }
+
+    .map-label {
+      position: absolute;
+      bottom: 8px;
+      left: 10px;
+      z-index: 999;
+      background: rgba(31, 56, 100, 0.85);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 3px;
+      pointer-events: none;
+    }
+
+    .panel h2 {
+      font-size: 1.3rem;
+      color: var(--brand-blue);
+      margin-bottom: 14px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .covers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 10px;
+    }
+
+    .cover-card {
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 11px 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .cover-card:hover {
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .cover-card.institution {
+      border-left: 4px solid #2f5496;
+    }
+
+    .cover-card.individual {
+      border-left: 4px solid var(--orange-deep);
+    }
+
+    .cover-icon {
+      font-size: 1rem;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .cover-name {
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .cover-meta {
+      font-size: 0.74rem;
+      color: #888;
+    }
+
+    .cover-views {
+      font-size: 0.73rem;
+      color: var(--orange-deep);
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    .panel-cta {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .panel-cta a {
+      color: var(--orange);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .panel-cta a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 40px 36px;
+      color: #6f7b90;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    footer a {
+      color: var(--brand-blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      header,
+      .hero,
+      main,
+      footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .map-wrapper {
+        height: 420px;
+        flex-direction: column;
+      }
+
+      #map-uk {
+        border-left: 0;
+        border-top: 3px solid var(--brand-blue-deep);
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .covers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="site-brand" href="index.html">
+      <img src="images/logo.png" alt="Mimi &amp; Friends logo">
+      <div class="site-title">Mimi &amp; Friends</div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#book">The Book</a>
+      <a href="covers.html">Covers</a>
+      <a href="map.html" aria-current="page">Map</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Cover Map</div>
+        <h1>The Song Traveled</h1>
+        <p>
+          Mimi's Shabbat lyrics started in early childhood classrooms and family programs, then spread by word of
+          mouth. This map shows the communities and performers we have identified so far across the continental United
+          States and England.
+        </p>
+      </div>
+      <div class="hero-card">
+        <strong>30+ covers</strong>
+        <span>Mapped and tracked across institutions and individual performers.</span>
+        <strong style="margin-top: 14px;">~1M</strong>
+        <span>Combined views and streams from the covers identified so far.</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="panel" aria-labelledby="map-heading">
+      <h2 id="map-heading">Covers Around the World</h2>
+      <div class="stats-bar">
+        <div class="stat">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Covers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">~1M</div>
+          <div class="stat-label">Combined Views</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Years Spreading</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">0</div>
+          <div class="stat-label">People in Charge</div>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#2f5496;"></div>
+          Synagogue / Institution
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#c55a11;"></div>
+          Individual Artist
+        </div>
+      </div>
+
+      <div class="map-wrapper">
+        <div id="map-us" class="map-panel">
+          <div class="map-label">United States</div>
+        </div>
+        <div id="map-uk" class="map-panel">
+          <div class="map-label">England</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="all-covers-heading">
+      <h2 id="all-covers-heading">All Covers</h2>
+      <p>
+        Some covers have confirmed map locations and appear with pins. Others are still included here even when an exact
+        location has not been verified yet.
+      </p>
+      <div class="covers-grid" id="covers-grid"></div>
+      <div class="panel-cta">
+        <a href="covers.html">Prefer the gallery view? Browse the full covers page.</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Now a board book. <a href="index.html">Learn more at mimiandfriends.com</a></p>
+  </footer>
+
+  <script>
+    const US_COVERS = [
+      { name: "Isaac Zones / Shaboom!", type: "individual", views: 731000, location: "New York, NY", lat: 40.730, lng: -73.935, url: "https://www.youtube.com/watch?v=hr1Y1cKPh5w" },
+      { name: "Debbie Brukman", type: "individual", views: 98000, location: "United States", lat: 38.500, lng: -90.200, url: "https://www.youtube.com/watch?v=SHzDRS0Ise4" },
+      { name: "Wilshire Boulevard Temple", type: "institution", views: 26000, location: "Los Angeles, CA", lat: 34.062, lng: -118.350, url: "https://www.youtube.com/watch?v=WQhpZAJWf8U" },
+      { name: "Temple Adat Elohim", type: "institution", views: 1200, location: "Thousand Oaks, CA", lat: 34.171, lng: -118.838, url: "https://www.youtube.com/watch?v=wBP7-ZQXhpY" },
+      { name: "The Weinstein School (Marcus JCC)", type: "institution", views: 2900, location: "Dunwoody, GA", lat: 33.946, lng: -84.338, url: "https://www.youtube.com/watch?v=MIyXEBh_vuI" },
+      { name: "Jewish Federation of Greater Dayton", type: "institution", views: 152, location: "Dayton, OH", lat: 39.759, lng: -84.192, url: "https://www.youtube.com/watch?v=OndDGP2dpFw" },
+      { name: "OmahaJCC", type: "institution", views: 49, location: "Omaha, NE", lat: 41.263, lng: -96.047, url: "https://www.youtube.com/watch?v=sDyzr9FPxds" },
+      { name: "Columbia Jewish Congregation", type: "institution", views: 98, location: "Columbia, MD", lat: 39.209, lng: -76.884, url: "https://www.youtube.com/watch?v=VMPIjRpP1ZU" },
+      { name: "SiegelJCC", type: "institution", views: 838, location: "Wilmington, DE", lat: 39.740, lng: -75.543, url: "https://www.youtube.com/watch?v=QQFexvQIlAY" },
+      { name: "Samuel Field Y Day Camp", type: "institution", views: 843, location: "Little Neck, NY", lat: 40.764, lng: -73.736, url: "https://www.youtube.com/watch?v=vN9NhhCuWng" },
+      { name: "Temple Emanu-El", type: "institution", views: 280, location: "New York, NY", lat: 40.774, lng: -73.969, url: "" }
+    ];
+
+    const UK_COVERS = [
+      { name: "Finchley Reform Synagogue", type: "institution", views: 32977, location: "London, England", lat: 51.617, lng: -0.177, url: "https://www.youtube.com/watch?v=fPEkaaPN7yI" }
+    ];
+
+    const ALL_COVERS = [
+      ...US_COVERS,
+      ...UK_COVERS,
+      { name: "the sababasmusic", type: "individual", views: 20000, location: null, url: "https://www.youtube.com/watch?v=wFLmbeGXk2I" },
+      { name: "Gabriel B", type: "individual", views: 12000, location: null, url: "https://www.youtube.com/watch?v=0NW03o1e84U" },
+      { name: "Andi Joseph", type: "individual", views: 8600, location: null, url: "https://www.youtube.com/watch?v=RH2nlsdAkqM" },
+      { name: "Hazz'n Dan", type: "individual", views: 8600, location: null, url: "https://www.youtube.com/watch?v=WbS8wYioMUo" },
+      { name: "Dyli", type: "individual", views: 4200, location: null, url: "https://www.youtube.com/watch?v=5j1GKUuH6Gg" },
+      { name: "Moshe Weisblum", type: "individual", views: 3100, location: null, url: "https://www.youtube.com/watch?v=o4kpIavDfMs" },
+      { name: "Music with Mr. Ari", type: "individual", views: 3000, location: null, url: "http://youtube.com/watch?v=MoWV70qkiE4" },
+      { name: "Scott Levine", type: "individual", views: 2375, location: null, url: "https://youtu.be/yWAKxJjjDVo" },
+      { name: "Shira & Friends", type: "individual", views: 636, location: null, url: "https://www.youtube.com/watch?v=RtA7em_YYgc" },
+      { name: "Kayli Joseph", type: "individual", views: 1100, location: null, url: "https://www.youtube.com/watch?v=gng5iLb16wA" },
+      { name: "bytownnukes", type: "individual", views: 397, location: null, url: "https://www.youtube.com/watch?v=OR7-SetsqE4" },
+      { name: "Kevin Longobart Music", type: "individual", views: 178, location: null, url: "https://www.youtube.com/watch?v=dH16pub3N6s" },
+      { name: "Jill Frank", type: "individual", views: 141, location: null, url: "https://www.youtube.com/watch?v=FvhkTwL9Qek" },
+      { name: "Ariel Kohll", type: "individual", views: 39, location: "SoundCloud", url: "" }
+    ];
+
+    function fmt(value) {
+      if (value >= 1000000) return (value / 1000000).toFixed(1) + 'M';
+      if (value >= 1000) return Math.round(value / 1000) + 'k';
+      return value.toLocaleString();
+    }
+
+    function makeIcon(type, big) {
+      const color = type === 'institution' ? '#2f5496' : '#c55a11';
+      const size = big ? 16 : 13;
+      return L.divIcon({
+        className: '',
+        html: `<div style="width:${size}px;height:${size}px;background:${color};border:2.5px solid white;border-radius:50%;box-shadow:0 2px 5px rgba(0,0,0,0.45);"></div>`,
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+        popupAnchor: [0, -size / 2]
+      });
+    }
+
+    function popupHtml(cover) {
+      return `<div style="font-family:'Helvetica Neue',Arial,sans-serif;min-width:180px;">
+        <div style="font-weight:700;font-size:0.88rem;color:#1f3864;margin-bottom:4px;">${cover.name}</div>
+        ${cover.location ? `<div style="font-size:0.75rem;color:#777;margin-bottom:3px;">${cover.location}</div>` : ''}
+        <div style="font-size:0.8rem;color:#c55a11;font-weight:700;margin-bottom:5px;">${fmt(cover.views)} views</div>
+        ${cover.url ? `<a href="${cover.url}" target="_blank" rel="noopener noreferrer" style="font-size:0.75rem;color:#2f5496;text-decoration:none;font-weight:600;">Watch the cover</a>` : ''}
+      </div>`;
+    }
+
+    const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    const tileOptions = {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19
+    };
+
+    const mapUS = L.map('map-us', {
+      center: [38.5, -96],
+      zoom: 4,
+      zoomControl: true,
+      scrollWheelZoom: false,
+      maxBounds: [[20, -135], [55, -55]]
+    });
+    L.tileLayer(tileUrl, tileOptions).addTo(mapUS);
+
+    US_COVERS.forEach((cover) => {
+      L.marker([cover.lat, cover.lng], { icon: makeIcon(cover.type, true) })
+        .addTo(mapUS)
+        .bindPopup(L.popup({ maxWidth: 220 }).setContent(popupHtml(cover)));
+    });
+
+    const mapUK = L.map('map-uk', {
+      center: [51.55, -0.3],
+      zoom: 8,
+      zoomControl: false,
+      scrollWheelZoom: false,
+      dragging: false,
+      doubleClickZoom: false,
+      touchZoom: false,
+      keyboard: false
+    });
+    L.tileLayer(tileUrl, tileOptions).addTo(mapUK);
+
+    UK_COVERS.forEach((cover) => {
+      L.marker([cover.lat, cover.lng], { icon: makeIcon(cover.type, true) })
+        .addTo(mapUK)
+        .bindPopup(L.popup({ maxWidth: 220 }).setContent(popupHtml(cover)));
+    });
+
+    const grid = document.getElementById('covers-grid');
+    [...ALL_COVERS]
+      .sort((left, right) => right.views - left.views)
+      .forEach((cover) => {
+        const element = document.createElement(cover.url ? 'a' : 'div');
+        element.className = `cover-card ${cover.type}`;
+        if (cover.url) {
+          element.href = cover.url;
+          element.target = '_blank';
+          element.rel = 'noopener noreferrer';
+        }
+        element.innerHTML = `
+          <div class="cover-icon">${cover.type === 'institution' ? '🏛️' : '🎵'}</div>
+          <div>
+            <div class="cover-name">${cover.name}</div>
+            <div class="cover-meta">${cover.location || 'Location unknown'}</div>
+            <div class="cover-views">${fmt(cover.views)} views</div>
+          </div>`;
+        grid.appendChild(element);
+      });
+  </script>
+</body>
+
+</html>
