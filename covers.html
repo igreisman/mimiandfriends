@@ -19,6 +19,7 @@
       --text: #24324b;
       --muted: #5c6b86;
       --line: #d9e2ff;
+      --hero-band-height: 430px;
     }
 
     * {
@@ -31,7 +32,7 @@
       font-family: 'Nunito', sans-serif;
       background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 26%),
-        linear-gradient(180deg, #0a44cd 0%, var(--brand-blue) 320px, var(--paper) 320px, var(--paper) 100%);
+        linear-gradient(180deg, #0a44cd 0%, var(--brand-blue) var(--hero-band-height), var(--paper) var(--hero-band-height), var(--paper) 100%);
       color: var(--text);
       min-height: 100vh;
     }
@@ -306,6 +307,10 @@
     }
 
     @media (max-width: 900px) {
+      :root {
+        --hero-band-height: 560px;
+      }
+
       header,
       .hero,
       main,
@@ -324,6 +329,10 @@
     }
 
     @media (max-width: 640px) {
+      :root {
+        --hero-band-height: 680px;
+      }
+
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -390,22 +399,15 @@
       <div class="section-header">
         <div>
           <h2 id="institutions-heading">Institutions &amp; Organizations</h2>
-          <p>Schools, synagogues, camps, and community organizations that have shared the song with their families, listed alphabetically.</p>
+          <p>Schools, synagogues, camps, and community organizations that have shared the song with their families,
+            ordered by views.</p>
         </div>
       </div>
       <div class="grid">
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=VMPIjRpP1ZU" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/VMPIjRpP1ZU/mqdefault.jpg" alt="Columbia Jewish Congregation cover thumbnail">
-            <div class="card-body">
-              <div class="card-name">Columbia Jewish Congregation</div>
-              <div class="card-views">98 views · Columbia, MD</div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
           <a href="https://www.youtube.com/watch?v=fPEkaaPN7yI" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/fPEkaaPN7yI/mqdefault.jpg" alt="Finchley Reform Synagogue cover thumbnail">
+            <img src="https://img.youtube.com/vi/fPEkaaPN7yI/mqdefault.jpg"
+              alt="Finchley Reform Synagogue cover thumbnail">
             <div class="card-body">
               <div class="card-name">Finchley Reform Synagogue</div>
               <div class="card-views">32,977 views · London, England</div>
@@ -413,26 +415,46 @@
           </a>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=OndDGP2dpFw" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/OndDGP2dpFw/mqdefault.jpg" alt="Jewish Federation of Greater Dayton cover thumbnail">
+          <a href="https://www.youtube.com/watch?v=WQhpZAJWf8U" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/WQhpZAJWf8U/mqdefault.jpg"
+              alt="Wilshire Boulevard Temple cover thumbnail">
             <div class="card-body">
-              <div class="card-name">Jewish Federation of Greater Dayton</div>
-              <div class="card-views">152 views · Dayton, OH</div>
+              <div class="card-name">Wilshire Boulevard Temple</div>
+              <div class="card-views">26,000 views · Los Angeles, CA</div>
             </div>
           </a>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=sDyzr9FPxds" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/sDyzr9FPxds/mqdefault.jpg" alt="OmahaJCC cover thumbnail">
+          <a href="https://www.youtube.com/watch?v=MIyXEBh_vuI" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/MIyXEBh_vuI/mqdefault.jpg" alt="The Weinstein School cover thumbnail">
             <div class="card-body">
-              <div class="card-name">OmahaJCC</div>
-              <div class="card-views">49 views · Omaha, NE</div>
+              <div class="card-name">The Weinstein School</div>
+              <div class="card-views">2,900 views · Marcus JCC, Atlanta, GA</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=wBP7-ZQXhpY" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/wBP7-ZQXhpY/mqdefault.jpg" alt="Temple Adat Elohim cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Temple Adat Elohim</div>
+              <div class="card-views">1,200 views · Thousand Oaks, CA</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=ukWCSB9tSks" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/ukWCSB9tSks/mqdefault.jpg" alt="TKC Preschool cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">TKC Preschool</div>
+              <div class="card-views">1,200 views</div>
             </div>
           </a>
         </div>
         <div class="card">
           <a href="https://www.youtube.com/watch?v=vN9NhhCuWng" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/vN9NhhCuWng/mqdefault.jpg" alt="Samuel Field Y Day Camp cover thumbnail">
+            <img src="https://img.youtube.com/vi/vN9NhhCuWng/mqdefault.jpg"
+              alt="Samuel Field Y Day Camp cover thumbnail">
             <div class="card-body">
               <div class="card-name">Samuel Field Y Day Camp</div>
               <div class="card-views">843 views · Little Neck, NY</div>
@@ -449,13 +471,12 @@
           </a>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=wBP7-ZQXhpY" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/wBP7-ZQXhpY/mqdefault.jpg" alt="Temple Adat Elohim cover thumbnail">
+          <div class="card-static">
             <div class="card-body">
-              <div class="card-name">Temple Adat Elohim</div>
-              <div class="card-views">1,200 views · Thousand Oaks, CA</div>
+              <div class="card-name">WJCC Preschool — Ladybugs</div>
+              <div class="card-views">456 views</div>
             </div>
-          </a>
+          </div>
         </div>
         <div class="card">
           <div class="card-static">
@@ -466,37 +487,31 @@
           </div>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=MIyXEBh_vuI" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/MIyXEBh_vuI/mqdefault.jpg" alt="The Weinstein School cover thumbnail">
+          <a href="https://www.youtube.com/watch?v=OndDGP2dpFw" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/OndDGP2dpFw/mqdefault.jpg"
+              alt="Jewish Federation of Greater Dayton cover thumbnail">
             <div class="card-body">
-              <div class="card-name">The Weinstein School</div>
-              <div class="card-views">2,900 views · Marcus JCC, Atlanta, GA</div>
+              <div class="card-name">Jewish Federation of Greater Dayton</div>
+              <div class="card-views">152 views · Dayton, OH</div>
             </div>
           </a>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=ukWCSB9tSks" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/ukWCSB9tSks/mqdefault.jpg" alt="TKC Preschool cover thumbnail">
+          <a href="https://www.youtube.com/watch?v=VMPIjRpP1ZU" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/VMPIjRpP1ZU/mqdefault.jpg"
+              alt="Columbia Jewish Congregation cover thumbnail">
             <div class="card-body">
-              <div class="card-name">TKC Preschool</div>
-              <div class="card-views">1,200 views</div>
+              <div class="card-name">Columbia Jewish Congregation</div>
+              <div class="card-views">98 views · Columbia, MD</div>
             </div>
           </a>
         </div>
         <div class="card">
-          <div class="card-static">
+          <a href="https://www.youtube.com/watch?v=sDyzr9FPxds" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/sDyzr9FPxds/mqdefault.jpg" alt="OmahaJCC cover thumbnail">
             <div class="card-body">
-              <div class="card-name">WJCC Preschool — Ladybugs</div>
-              <div class="card-views">456 views</div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <a href="https://www.youtube.com/watch?v=WQhpZAJWf8U" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/WQhpZAJWf8U/mqdefault.jpg" alt="Wilshire Boulevard Temple cover thumbnail">
-            <div class="card-body">
-              <div class="card-name">Wilshire Boulevard Temple</div>
-              <div class="card-views">26,000 views · Los Angeles, CA</div>
+              <div class="card-name">OmahaJCC</div>
+              <div class="card-views">49 views · Omaha, NE</div>
             </div>
           </a>
         </div>
@@ -507,34 +522,17 @@
       <div class="section-header">
         <div>
           <h2 id="artists-heading">Individual Artists</h2>
-          <p>Performers and creators who recorded their own versions and helped the song reach new audiences, listed alphabetically.</p>
+          <p>Performers and creators who recorded their own versions and helped the song reach new audiences, ordered
+            by views.</p>
         </div>
       </div>
       <div class="grid">
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=RH2nlsdAkqM" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/RH2nlsdAkqM/mqdefault.jpg" alt="Andi Joseph cover thumbnail">
+          <a href="https://www.youtube.com/watch?v=XEovjkXrD4s" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/XEovjkXrD4s/mqdefault.jpg" alt="Shaboom! cover thumbnail">
             <div class="card-body">
-              <div class="card-name">Andi Joseph</div>
-              <div class="card-views">8,600 views</div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <div class="card-static">
-            <div class="card-body">
-              <div class="card-name">Ariel Kohll</div>
-              <div class="card-views">SoundCloud</div>
-              <div class="card-note">Jewish Youth Jams playlist</div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <a href="https://www.youtube.com/watch?v=OR7-SetsqE4" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/OR7-SetsqE4/mqdefault.jpg" alt="bytownnukes cover thumbnail">
-            <div class="card-body">
-              <div class="card-name">bytownnukes</div>
-              <div class="card-views">397 views</div>
+              <div class="card-name">Shaboom! (Isaac Zones)</div>
+              <div class="card-views">731,000 views</div>
             </div>
           </a>
         </div>
@@ -548,11 +546,11 @@
           </a>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=5j1GKUuH6Gg" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/5j1GKUuH6Gg/mqdefault.jpg" alt="Dyli cover thumbnail">
+          <a href="https://www.youtube.com/watch?v=wFLmbeGXk2I" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/wFLmbeGXk2I/mqdefault.jpg" alt="the sababasmusic cover thumbnail">
             <div class="card-body">
-              <div class="card-name">Dyli</div>
-              <div class="card-views">4,200 views</div>
+              <div class="card-name">the sababasmusic</div>
+              <div class="card-views">20,000 views</div>
             </div>
           </a>
         </div>
@@ -562,6 +560,24 @@
             <div class="card-body">
               <div class="card-name">Gabriel B</div>
               <div class="card-views">12,000 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=OuI0_rnpo_o" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/OuI0_rnpo_o/mqdefault.jpg" alt="Susan cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Susan</div>
+              <div class="card-views">9,000 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=RH2nlsdAkqM" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/RH2nlsdAkqM/mqdefault.jpg" alt="Andi Joseph cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Andi Joseph</div>
+              <div class="card-views">8,600 views</div>
             </div>
           </a>
         </div>
@@ -584,29 +600,11 @@
           </a>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=FvhkTwL9Qek" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/FvhkTwL9Qek/mqdefault.jpg" alt="Jill Frank cover thumbnail">
+          <a href="https://www.youtube.com/watch?v=5j1GKUuH6Gg" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/5j1GKUuH6Gg/mqdefault.jpg" alt="Dyli cover thumbnail">
             <div class="card-body">
-              <div class="card-name">Jill Frank</div>
-              <div class="card-views">141 views</div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="https://www.youtube.com/watch?v=gng5iLb16wA" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/gng5iLb16wA/mqdefault.jpg" alt="Kayli Joseph cover thumbnail">
-            <div class="card-body">
-              <div class="card-name">Kayli Joseph</div>
-              <div class="card-views">1,100 views</div>
-            </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="https://www.youtube.com/watch?v=dH16pub3N6s" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/dH16pub3N6s/mqdefault.jpg" alt="Kevin Longobart Music cover thumbnail">
-            <div class="card-body">
-              <div class="card-name">Kevin Longobart Music</div>
-              <div class="card-views">178 views</div>
+              <div class="card-name">Dyli</div>
+              <div class="card-views">4,200 views</div>
             </div>
           </a>
         </div>
@@ -638,11 +636,11 @@
           </a>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=XEovjkXrD4s" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/XEovjkXrD4s/mqdefault.jpg" alt="Shaboom! cover thumbnail">
+          <a href="https://www.youtube.com/watch?v=gng5iLb16wA" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/gng5iLb16wA/mqdefault.jpg" alt="Kayli Joseph cover thumbnail">
             <div class="card-body">
-              <div class="card-name">Shaboom! (Isaac Zones)</div>
-              <div class="card-views">731,000 views</div>
+              <div class="card-name">Kayli Joseph</div>
+              <div class="card-views">1,100 views</div>
             </div>
           </a>
         </div>
@@ -656,6 +654,33 @@
           </a>
         </div>
         <div class="card">
+          <a href="https://www.youtube.com/watch?v=OR7-SetsqE4" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/OR7-SetsqE4/mqdefault.jpg" alt="bytownnukes cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">bytownnukes</div>
+              <div class="card-views">397 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=dH16pub3N6s" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/dH16pub3N6s/mqdefault.jpg" alt="Kevin Longobart Music cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Kevin Longobart Music</div>
+              <div class="card-views">178 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.youtube.com/watch?v=FvhkTwL9Qek" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/FvhkTwL9Qek/mqdefault.jpg" alt="Jill Frank cover thumbnail">
+            <div class="card-body">
+              <div class="card-name">Jill Frank</div>
+              <div class="card-views">141 views</div>
+            </div>
+          </a>
+        </div>
+        <div class="card">
           <a href="https://youtu.be/5OLGU7gxMIU" target="_blank" rel="noopener noreferrer">
             <img src="https://img.youtube.com/vi/5OLGU7gxMIU/mqdefault.jpg" alt="Stacy Kelly cover thumbnail">
             <div class="card-body">
@@ -665,22 +690,13 @@
           </a>
         </div>
         <div class="card">
-          <a href="https://www.youtube.com/watch?v=OuI0_rnpo_o" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/OuI0_rnpo_o/mqdefault.jpg" alt="Susan cover thumbnail">
+          <div class="card-static">
             <div class="card-body">
-              <div class="card-name">Susan</div>
-              <div class="card-views">9,000 views</div>
+              <div class="card-name">Ariel Kohll</div>
+              <div class="card-views">SoundCloud</div>
+              <div class="card-note">Jewish Youth Jams playlist</div>
             </div>
-          </a>
-        </div>
-        <div class="card">
-          <a href="https://www.youtube.com/watch?v=wFLmbeGXk2I" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/wFLmbeGXk2I/mqdefault.jpg" alt="the sababasmusic cover thumbnail">
-            <div class="card-body">
-              <div class="card-name">the sababasmusic</div>
-              <div class="card-views">20,000 views</div>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>

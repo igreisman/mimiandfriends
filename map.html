@@ -22,6 +22,7 @@
       --text: #24324b;
       --muted: #5c6b86;
       --line: #d9e2ff;
+      --hero-band-height: 450px;
     }
 
     * {
@@ -34,7 +35,7 @@
       font-family: 'Nunito', sans-serif;
       background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 26%),
-        linear-gradient(180deg, #0a44cd 0%, var(--brand-blue) 260px, var(--paper) 260px, var(--paper) 100%);
+        linear-gradient(180deg, #0a44cd 0%, var(--brand-blue) var(--hero-band-height), var(--paper) var(--hero-band-height), var(--paper) 100%);
       color: var(--text);
       min-height: 100vh;
     }
@@ -154,7 +155,7 @@
 
     main {
       max-width: 1120px;
-      margin: 0 auto;
+      margin: 56px auto 0;
       padding: 0 40px 72px;
     }
 
@@ -366,6 +367,10 @@
     }
 
     @media (max-width: 900px) {
+      :root {
+        --hero-band-height: 620px;
+      }
+
       header,
       .hero,
       main,
@@ -376,6 +381,10 @@
 
       .hero-inner {
         grid-template-columns: 1fr;
+      }
+
+      main {
+        margin-top: 44px;
       }
 
       h1 {
@@ -394,6 +403,10 @@
     }
 
     @media (max-width: 640px) {
+      :root {
+        --hero-band-height: 720px;
+      }
+
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -401,6 +414,10 @@
 
       nav {
         gap: 16px;
+      }
+
+      main {
+        margin-top: 32px;
       }
 
       h1 {
