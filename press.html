@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mimi &amp; Friends — Press</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --brand-blue: #0038b8;
+      --brand-blue-dark: #002c90;
+      --paper: #fff8f0;
+      --paper-blue: #eaf0ff;
+      --orange: #f26d1b;
+      --text: #24324b;
+      --muted: #5c6b86;
+      --line: #d9e2ff;
+      --hero-band-height: 360px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 26%),
+        linear-gradient(180deg, #0a44cd 0%, var(--brand-blue) var(--hero-band-height), var(--paper) var(--hero-band-height), var(--paper) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .site-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .site-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 22px;
+    }
+
+    nav a {
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.92;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 20px 40px 48px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 360px);
+      gap: 30px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 3.9rem;
+      line-height: 1.05;
+      text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .hero-copy p {
+      max-width: 760px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 26px;
+      padding: 22px;
+      color: #fff;
+      box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 1.85rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-card span {
+      display: block;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 12px auto 0;
+      padding: 0 40px 72px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(217, 226, 255, 0.8);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 18px 36px rgba(0, 56, 184, 0.08);
+      margin-bottom: 28px;
+    }
+
+    .panel h2 {
+      font-size: 1.35rem;
+      color: var(--brand-blue);
+      margin-bottom: 14px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(260px, 320px);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .download-card {
+      border: 1px solid #d7e1ff;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--paper-blue), #fff 70%);
+      padding: 24px;
+    }
+
+    .download-card h3,
+    .contact-card h3 {
+      font-size: 1.08rem;
+      color: var(--brand-blue);
+      margin-bottom: 12px;
+    }
+
+    .download-meta {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .button {
+      background: var(--brand-blue);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(0, 56, 184, 0.16);
+    }
+
+    .button-secondary {
+      background: #fff;
+      color: var(--brand-blue);
+      border: 1px solid #c8d7ff;
+    }
+
+    .button:hover,
+    .button-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .contact-card {
+      border: 1px solid #e4e9f8;
+      border-radius: 24px;
+      background: #fff;
+      padding: 24px;
+    }
+
+    .contact-card a {
+      color: var(--brand-blue);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    .note-list {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.7;
+      padding-left: 18px;
+    }
+
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 40px 36px;
+      color: #6f7b90;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    footer p + p {
+      margin-top: 8px;
+    }
+
+    footer a {
+      color: var(--brand-blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --hero-band-height: 500px;
+      }
+
+      header,
+      .hero,
+      main,
+      footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .hero-inner,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --hero-band-height: 620px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+
+      .panel,
+      .download-card,
+      .contact-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="site-brand" href="index.html">
+      <img src="images/logo.png" alt="Mimi &amp; Friends logo">
+      <div class="site-title">Mimi &amp; Friends</div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#book">The Book</a>
+      <a href="covers.html">Covers</a>
+      <a href="map.html">Map</a>
+      <a href="press.html" aria-current="page">Press</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Press &amp; Wholesale</div>
+        <h1>Everything You Need, In One Place</h1>
+        <p>
+          Editors, reviewers, librarians, and booksellers can download the current sell sheet directly from this page.
+          If you discover the site independently, the key book details are here and ready to use.
+        </p>
+      </div>
+      <div class="hero-card">
+        <strong>Download the sell sheet</strong>
+        <span>Grab the PDF for cataloging, review, ordering, or internal editorial reference.</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="panel" aria-labelledby="press-resources-heading">
+      <h2 id="press-resources-heading">Press Resources</h2>
+      <div class="resource-grid">
+        <div class="download-card">
+          <h3>There's A Dinosaur Knocking On My Door — Sell Sheet</h3>
+          <p class="download-meta">
+            Includes the book overview, format details, positioning, and core sales information for press and wholesale use.
+          </p>
+          <div class="actions">
+            <a class="button"
+              href="images/There's%20A%20Dinosaur%20Knocking%20On%20My%20Door%20%E2%80%94%20Sell%20Sheet.pdf"
+              download>Download PDF</a>
+            <a class="button-secondary"
+              href="images/There's%20A%20Dinosaur%20Knocking%20On%20My%20Door%20%E2%80%94%20Sell%20Sheet.pdf"
+              target="_blank" rel="noopener noreferrer">Open in Browser</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <h3>Questions or requests?</h3>
+          <p>
+            For press and wholesale inquiries, email <a href="mailto:irving@mimiandfriends.com">irving@mimiandfriends.com</a>.
+          </p>
+          <ul class="note-list">
+            <li>Use the PDF for quick editorial or buyer reference.</li>
+            <li>Reach out directly for additional materials or follow-up questions.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="index.html">Return to mimiandfriends.com</a></p>
+    <p><a href="press.html">Press resources and sell sheet</a></p>
+    <p>Press &amp; wholesale inquiries: <a href="mailto:irving@mimiandfriends.com">irving@mimiandfriends.com</a></p>
+  </footer>
+</body>
+
+</html>
