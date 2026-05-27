@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inside the Book — There's A Dinosaur Knocking On My Door</title>
+  <title>Where to Buy — There's A Dinosaur Knocking On My Door</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
     rel="stylesheet">
@@ -90,7 +90,7 @@
     .page-hero p {
       font-size: 1.1rem;
       color: rgba(255, 255, 255, 0.88);
-      max-width: 580px;
+      max-width: 520px;
       margin: 0 auto;
       line-height: 1.75;
     }
@@ -106,77 +106,47 @@
       display: block;
     }
 
-    /* SPREADS */
-    .spreads-section {
+    /* MAIN CONTENT */
+    .coming-soon-section {
       background: var(--paper);
-      padding: 60px 40px 70px;
-    }
-
-    .spreads-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 64px;
-    }
-
-    .spread-block {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .spread-block img {
-      width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
-      display: block;
-    }
-
-    .spread-caption {
-      padding: 0 4px;
-    }
-
-    .spread-caption .spread-number {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--brand-blue);
-      margin-bottom: 4px;
-    }
-
-    .spread-caption p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #555;
-    }
-
-    /* CTA SECTION */
-    .cta-section {
-      background: var(--paper-blue);
-      padding: 60px 40px;
+      padding: 80px 40px 90px;
       text-align: center;
     }
 
-    .cta-section h2 {
-      font-family: 'Caveat', cursive;
-      font-size: 2rem;
-      color: var(--brand-blue);
-      margin-bottom: 14px;
+    .coming-soon-inner {
+      max-width: 560px;
+      margin: 0 auto;
     }
 
-    .cta-section p {
+    .coming-soon-inner .badge {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: #ffe59a;
+      color: #4b3a00;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .coming-soon-inner h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.4rem;
+      color: var(--brand-blue);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .coming-soon-inner p {
       font-size: 1.05rem;
       color: #555;
-      margin-bottom: 28px;
-      line-height: 1.7;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.75;
+      margin-bottom: 32px;
     }
 
-    .cta-section a.btn {
+    .coming-soon-inner a.btn {
       display: inline-block;
       background: var(--brand-blue);
       color: #fff;
@@ -188,7 +158,7 @@
       transition: background 0.2s;
     }
 
-    .cta-section a.btn:hover {
+    .coming-soon-inner a.btn:hover {
       background: var(--brand-blue-dark);
     }
 
@@ -218,8 +188,8 @@
         font-size: 2.2rem;
       }
 
-      .spreads-section {
-        padding: 40px 20px 50px;
+      .coming-soon-section {
+        padding: 60px 24px 70px;
       }
     }
   </style>
@@ -235,16 +205,17 @@
     <nav>
       <a href="index.html#book">The Book</a>
       <a href="index.html#about">About Mimi</a>
-      <a href="preview.html" aria-current="page">Preview</a>
-      <a href="wheretobuy.html">Where to Buy</a>
+      <a href="preview.html">Preview</a>
+      <a href="wheretobuy.html" aria-current="page">Where to Buy</a>
       <a href="covers.html">Covers</a>
+      <a href="press.html">Press</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
   <div class="page-hero">
-    <h1>Inside the Book</h1>
-    <p>A peek at a few pages from There's A Dinosaur Knocking On My Door, coming September 2026.</p>
+    <h1>Where to Buy</h1>
+    <p>There's A Dinosaur Knocking On My Door arrives in September 2026.</p>
   </div>
 
   <div class="wave">
@@ -253,46 +224,14 @@
     </svg>
   </div>
 
-  <section class="spreads-section">
-    <div class="spreads-inner">
-
-      <div class="spread-block">
-        <!-- Replace spread-door.jpg with your exported image filename -->
-        <img src="images/spread-door.jpg" alt="The dinosaur knocks on the door, knocking 1 2 3">
-        <div class="spread-caption">
-          <div class="spread-number">Pages 1–2</div>
-          <p>It all starts with a knock. A friendly dinosaur — kippah on his head, flowers in hand — shows up ready to
-            celebrate Shabbat. He wants to have Shabbat with <em>me!</em></p>
-        </div>
-      </div>
-
-      <div class="spread-block">
-        <!-- Replace spread-candles.jpg with your exported image filename -->
-        <img src="images/spread-candles.jpg" alt="The dinosaur helps light the Shabbat candles with the family">
-        <div class="spread-caption">
-          <div class="spread-number">Pages 5–6</div>
-          <p>Oh, he wants to light the candles. The whole family is there — and so is the dinosaur, right in the middle
-            of the celebration where he belongs.</p>
-        </div>
-      </div>
-
-      <div class="spread-block">
-        <!-- Replace spread-challah.jpg with your exported image filename -->
-        <img src="images/spread-challah.jpg" alt="He wants to eat some challah!">
-        <div class="spread-caption">
-          <div class="spread-number">Pages 9–10</div>
-          <p>He wants to eat some... <strong>CHALLAH!</strong> The call-and-response rhythm that has made this song a
-            classroom favorite for thirty years comes through on every page.</p>
-        </div>
-      </div>
-
+  <section class="coming-soon-section">
+    <div class="coming-soon-inner">
+      <span class="badge">Available September 2026</span>
+      <h2>Purchase links coming soon</h2>
+      <p>The book will be available on Amazon and at select Judaica bookstores and synagogue gift shops. Sign up below
+        and we will let you know the moment it is ready to order.</p>
+      <a class="btn" href="index.html#contact">Keep Me Posted</a>
     </div>
-  </section>
-
-  <section class="cta-section">
-    <h2>Get Notified at Launch</h2>
-    <p>The book arrives in September 2026. Sign up to hear about it the moment it's available.</p>
-    <a class="btn" href="index.html#contact">Keep Me Posted</a>
   </section>
 
   <footer>
