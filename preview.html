@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inside the Book — There's A Dinosaur Knocking On My Door</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --brand-blue: #0038B8;
+      --brand-blue-dark: #002c90;
+      --paper: #fff3bf;
+      --paper-blue: #eaf0ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--brand-blue);
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--brand-blue);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .site-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    header .site-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    nav a {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 1rem;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* HERO BAND */
+    .page-hero {
+      background: linear-gradient(135deg, #0b46d5 0%, var(--brand-blue) 55%, #00256f 100%);
+      padding: 48px 40px 56px;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+      margin-bottom: 12px;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* WAVE */
+    .wave {
+      display: block;
+      width: 100%;
+      background: var(--brand-blue);
+    }
+
+    .wave svg {
+      display: block;
+    }
+
+    /* SPREADS */
+    .spreads-section {
+      background: var(--paper);
+      padding: 60px 40px 70px;
+    }
+
+    .spreads-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    .spread-block {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .spread-block img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+      display: block;
+    }
+
+    .spread-caption {
+      padding: 0 4px;
+    }
+
+    .spread-caption .spread-number {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      margin-bottom: 4px;
+    }
+
+    .spread-caption p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--paper-blue);
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: var(--brand-blue);
+      margin-bottom: 14px;
+    }
+
+    .cta-section p {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 28px;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-section a.btn {
+      display: inline-block;
+      background: var(--brand-blue);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cta-section a.btn:hover {
+      background: var(--brand-blue-dark);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--brand-blue);
+      color: #fff;
+      text-align: center;
+      padding: 28px 40px;
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .page-hero {
+        padding: 36px 24px 44px;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .spreads-section {
+        padding: 40px 20px 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="site-brand">
+      <img src="images/logo.png" alt="Mimi &amp; Friends logo">
+      <div class="site-title">Mimi &amp; Friends</div>
+    </div>
+    <nav>
+      <a href="index.html#book">The Book</a>
+      <a href="index.html#about">About Mimi</a>
+      <a href="covers.html">Covers</a>
+      <a href="map.html">Map</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <h1>Inside the Book</h1>
+    <p>A peek at a few pages from There's A Dinosaur Knocking On My Door, coming September 2026.</p>
+  </div>
+
+  <div class="wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60">
+      <path fill="#fff3bf" d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" />
+    </svg>
+  </div>
+
+  <section class="spreads-section">
+    <div class="spreads-inner">
+
+      <div class="spread-block">
+        <!-- Replace spread-door.jpg with your exported image filename -->
+        <img src="images/spread-door.jpg" alt="The dinosaur knocks on the door, knocking 1 2 3">
+        <div class="spread-caption">
+          <div class="spread-number">Pages 1–2</div>
+          <p>It all starts with a knock. A friendly dinosaur — kippah on his head, flowers in hand — shows up ready to
+            celebrate Shabbat. He wants to have Shabbat with <em>me!</em></p>
+        </div>
+      </div>
+
+      <div class="spread-block">
+        <!-- Replace spread-candles.jpg with your exported image filename -->
+        <img src="images/spread-candles.jpg" alt="The dinosaur helps light the Shabbat candles with the family">
+        <div class="spread-caption">
+          <div class="spread-number">Pages 5–6</div>
+          <p>Oh, he wants to light the candles. The whole family is there — and so is the dinosaur, right in the middle
+            of the celebration where he belongs.</p>
+        </div>
+      </div>
+
+      <div class="spread-block">
+        <!-- Replace spread-challah.jpg with your exported image filename -->
+        <img src="images/spread-challah.jpg" alt="He wants to eat some challah!">
+        <div class="spread-caption">
+          <div class="spread-number">Pages 9–10</div>
+          <p>He wants to eat some... <strong>CHALLAH!</strong> The call-and-response rhythm that has made this song a
+            classroom favorite for thirty years comes through on every page.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Get Notified at Launch</h2>
+    <p>The book arrives in September 2026. Sign up to hear about it the moment it's available.</p>
+    <a class="btn" href="index.html#contact">Keep Me Posted</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Mimi Greisman · mimiandfriends.com</p>
+  </footer>
+
+</body>
+
+</html>

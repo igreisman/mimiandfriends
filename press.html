@@ -128,7 +128,7 @@
 
     .hero-card {
       align-self: start;
-      margin-top: -52px;
+      margin-top: 0;
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 26px;
@@ -286,9 +286,29 @@
       text-decoration: underline;
     }
 
+    @media (min-width: 1380px) {
+      .hero-card {
+        margin-top: -80px;
+      }
+    }
+
+    @media (min-width: 901px) and (max-width: 1200px) {
+      .hero {
+        padding-bottom: 104px;
+      }
+
+      main {
+        margin-top: 64px;
+      }
+    }
+
     @media (max-width: 900px) {
       :root {
         --hero-band-height: 500px;
+      }
+
+      .hero {
+        padding-bottom: 104px;
       }
 
       header,
@@ -305,11 +325,11 @@
       }
 
       .hero-card {
-        margin-top: 0;
+        margin-top: 44px;
       }
 
       main {
-        margin-top: 28px;
+        margin-top: 64px;
       }
 
       h1 {
