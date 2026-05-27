@@ -277,6 +277,25 @@
       margin-bottom: 14px;
     }
 
+    .book-preview-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--brand-blue);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(0, 56, 184, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .book-preview-link:hover {
+      background: var(--brand-blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 56, 184, 0.28);
+    }
+
     .credits {
       margin-top: 24px;
       font-size: 0.95rem;
@@ -529,7 +548,6 @@
       <a href="#about">About Mimi</a>
       <a href="preview.html">Preview</a>
       <a href="covers.html">Covers</a>
-      <a href="map.html">Map</a>
       <a href="press.html">Press</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -587,6 +605,7 @@
         Perfect for toddlers and young children, this board book makes Shabbat
         something kids will look forward to all week long.
       </p>
+      <a class="book-preview-link" href="preview.html">Preview the book</a>
       <div class="credits">
         <span>Written</span> by Mimi Greisman<br>
         <span>Illustrated</span> by Maureen Arnow<br>
