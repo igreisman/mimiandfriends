@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mimi & Friends — There's A Dinosaur Knocking On My Door</title>
+  <title>Where to Buy — There's A Dinosaur Knocking at My Door</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
     rel="stylesheet">
@@ -72,155 +72,30 @@
       text-decoration: underline;
     }
 
-    #about-the-book {
-      scroll-margin-top: 24px;
+    /* HERO BAND */
+    .page-hero {
+      background: linear-gradient(135deg, #0b46d5 0%, var(--brand-blue) 55%, #00256f 100%);
+      padding: 48px 40px 56px;
+      text-align: center;
     }
 
-    /* HERO */
-    .hero {
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 32%),
-        linear-gradient(135deg, #0b46d5 0%, var(--brand-blue) 55%, #00256f 100%);
-      padding: 56px 40px 84px;
-    }
-
-    .hero-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
-      gap: 44px;
-      align-items: start;
-    }
-
-    .hero-title {
-      grid-column: 1 / -1;
-    }
-
-    .hero-copy {
-      color: #fff;
-    }
-
-    .hero-kicker {
-      display: inline-block;
-      margin-bottom: 16px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.14);
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .hero h1 {
+    .page-hero h1 {
       font-family: 'Caveat', cursive;
-      font-size: 4rem;
+      font-size: 3rem;
       color: #fff;
       text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
-      max-width: 860px;
-      margin-bottom: 0;
-      line-height: 1.1;
+      margin-bottom: 12px;
     }
 
-    .hero p.tagline {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: rgba(255, 255, 255, 0.92);
-      max-width: 560px;
-      margin-bottom: 28px;
-    }
-
-    .hero p.hero-note {
-      font-size: 1.02rem;
-      line-height: 1.75;
+    .page-hero p {
+      font-size: 1.1rem;
       color: rgba(255, 255, 255, 0.88);
-      max-width: 560px;
-      margin-bottom: 24px;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.75;
     }
 
-    .hero p.hero-note a {
-      color: #fff;
-      font-weight: 700;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 0.16em;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .hero .cta,
-    .hero .video-link {
-      display: inline-block;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    }
-
-    .hero .cta {
-      background: #fff;
-      color: var(--brand-blue);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .hero .video-link {
-      color: #fff;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .hero .cta:hover,
-    .hero .video-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .hero-media {
-      position: relative;
-    }
-
-    .video-card {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 28px;
-      padding: 18px;
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
-      backdrop-filter: blur(8px);
-    }
-
-    .video-frame {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      overflow: hidden;
-      border-radius: 18px;
-      background: #00194b;
-    }
-
-    .video-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .video-caption {
-      margin-top: 14px;
-      color: rgba(255, 255, 255, 0.92);
-      font-size: 0.98rem;
-      line-height: 1.6;
-    }
-
-    /* WAVE DIVIDER */
+    /* WAVE */
     .wave {
       display: block;
       width: 100%;
@@ -231,204 +106,201 @@
       display: block;
     }
 
-    /* BOOK SECTION */
-    .book-section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 70px 40px;
-      display: flex;
-      align-items: center;
-      gap: 60px;
+    /* PRE-ORDER SECTION */
+    .preorder-section {
       background: var(--paper);
-      border-radius: 28px;
+      padding: 72px 40px 80px;
+      text-align: center;
     }
 
-    .book-section img {
-      width: 260px;
-      min-width: 260px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    .preorder-inner {
+      max-width: 560px;
+      margin: 0 auto;
     }
 
-    .book-text h2 {
-      font-family: 'Caveat', cursive;
-      font-size: 2rem;
-      color: var(--brand-blue);
-      margin-bottom: 16px;
-    }
-
-    .availability-note {
+    .badge {
       display: inline-block;
-      margin: 0 0 18px;
-      padding: 8px 14px;
+      margin-bottom: 24px;
+      padding: 8px 18px;
       border-radius: 999px;
       background: #ffe59a;
       color: #4b3a00;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 800;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
-    .book-text p {
+    .preorder-inner h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.6rem;
+      color: var(--brand-blue);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .preorder-inner p.lead {
       font-size: 1.05rem;
-      line-height: 1.75;
       color: #555;
+      line-height: 1.75;
       margin-bottom: 14px;
     }
 
-    .book-preview-link {
+    .price {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--brand-blue-dark);
+      margin-bottom: 26px;
+    }
+
+    a.btn {
       display: inline-block;
-      margin-top: 10px;
-      padding: 12px 22px;
-      border-radius: 999px;
       background: var(--brand-blue);
       color: #fff;
-      font-weight: 700;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 16px 44px;
+      border-radius: 50px;
       text-decoration: none;
-      box-shadow: 0 10px 24px rgba(0, 56, 184, 0.22);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
     }
 
-    .book-preview-link:hover {
+    a.btn:hover {
       background: var(--brand-blue-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(0, 56, 184, 0.28);
     }
 
-    .credits {
-      margin-top: 24px;
+    a.btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.18);
+    }
+
+    .ships-note {
+      margin-top: 14px;
       font-size: 0.95rem;
-      color: #888;
-      line-height: 1.8;
-    }
-
-    .credits span {
-      color: var(--brand-blue);
+      color: #7a6a2e;
       font-weight: 700;
     }
 
-    /* ABOUT SECTION */
-    .about-section {
-      background: var(--paper-blue);
-      padding: 70px 40px;
-    }
-
-    .about-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .about-inner img.mimi-photo {
-      width: 220px;
-      min-width: 220px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    .about-text h2 {
-      font-family: 'Caveat', cursive;
-      font-size: 2rem;
-      color: var(--brand-blue);
-      margin-bottom: 16px;
-    }
-
-    .about-text p {
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #555;
-      margin-bottom: 14px;
-    }
-
-    /* CONTACT */
-    .contact-section {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 70px 40px;
-      text-align: center;
-      background: var(--paper);
-      border-radius: 28px;
-    }
-
-    .contact-section h2 {
-      font-family: 'Caveat', cursive;
-      font-size: 2rem;
-      color: var(--brand-blue);
-      margin-bottom: 16px;
-    }
-
-    .contact-section .launch-date {
-      display: block;
-    }
-
-    .contact-section p {
-      font-size: 1.05rem;
-      color: #555;
-      margin-bottom: 28px;
+    .secondary {
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #666;
       line-height: 1.7;
     }
 
-    .contact-section p.contact-secondary {
-      font-size: 0.98rem;
-      margin-top: -8px;
-      margin-bottom: 22px;
-      color: #4c5570;
-    }
-
-    .contact-section p.contact-secondary a {
+    .secondary a {
       color: var(--brand-blue);
       font-weight: 700;
       text-decoration: none;
     }
 
-    .contact-section p.contact-secondary a:hover {
+    .secondary a:hover {
       text-decoration: underline;
     }
 
-    .contact-section a.email-btn {
-      display: inline-block;
-      background: var(--brand-blue);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background 0.2s;
+    .retail-note {
+      margin-top: 26px;
+      font-size: 0.9rem;
+      color: #8a7a3e;
     }
 
-    .contact-section a.email-btn:hover {
-      background: var(--brand-blue-dark);
+    /* BULK SECTION */
+    .bulk-section {
+      background: var(--paper-blue);
+      padding: 64px 40px 72px;
+      text-align: center;
+    }
+
+    .bulk-inner {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .bulk-inner h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.3rem;
+      color: var(--brand-blue);
+      margin-bottom: 14px;
+    }
+
+    .bulk-inner p {
+      font-size: 1.05rem;
+      color: #4a4a4a;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .tiers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .tier {
+      background: #fff;
+      border: 2px solid #d4e0ff;
+      border-radius: 14px;
+      padding: 14px 18px;
+      min-width: 120px;
+    }
+
+    .tier .qty {
+      font-weight: 800;
+      color: var(--brand-blue-dark);
+      font-size: 0.95rem;
+    }
+
+    .tier .each {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+    }
+
+    .bulk-ship {
+      font-size: 0.95rem;
+      color: #5a6a8a;
+      margin-bottom: 26px;
+      font-weight: 600;
+    }
+
+    /* PRESS STRIP */
+    .press-strip {
+      background: var(--brand-blue);
+      color: #fff;
+      text-align: center;
+      padding: 40px 40px;
+    }
+
+    .press-strip .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.9rem;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .press-strip .source a {
+      color: #ffe59a;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .press-strip .source a:hover {
+      text-decoration: underline;
     }
 
     /* FOOTER */
     footer {
-      background: var(--brand-blue);
+      background: var(--brand-blue-dark);
       color: #fff;
       text-align: center;
       padding: 28px 40px;
       font-size: 0.9rem;
       opacity: 0.95;
-    }
-
-    footer p+p {
-      margin-top: 8px;
-      font-size: 0.92rem;
-    }
-
-    footer a {
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
 
     /* RESPONSIVE */
@@ -439,101 +311,27 @@
         text-align: center;
       }
 
-      .book-section,
-      .about-inner {
-        flex-direction: column;
-        text-align: center;
+      nav a {
+        margin: 0 12px;
       }
 
-      .book-section img,
-      .about-inner img.mimi-photo {
-        width: 200px;
-        min-width: 200px;
+      .page-hero {
+        padding: 36px 24px 44px;
       }
 
-      .hero {
-        padding: 44px 24px 68px;
+      .page-hero h1 {
+        font-size: 2.2rem;
       }
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 28px;
+      .preorder-section {
+        padding: 56px 24px 64px;
       }
 
-      .hero-copy {
-        text-align: center;
-      }
-
-      .hero-title {
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 2.7rem;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero p.tagline {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-actions {
-        justify-content: center;
-      }
-
-      .video-card {
-        padding: 14px;
+      .bulk-section {
+        padding: 52px 24px 60px;
       }
     }
   </style>
-  <!-- MailerLite Universal -->
-  <script>
-    (function (w, d, e, u, f, l, n) {
-      w[f] = w[f] || function () {
-        (w[f].q = w[f].q || [])
-          .push(arguments);
-      }, l = d.createElement(e), l.async = 1, l.src = u,
-        n = d.getElementsByTagName(e)[0], n.parentNode.insertBefore(l, n);
-    })
-      (window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
-    ml('account', '2303067');
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const contactSection = document.getElementById('contact');
-      const replacementText = 'Be the first to know when the book is available';
-
-      if (!contactSection) {
-        return;
-      }
-
-      function updateMailerLiteCopy() {
-        const signupCopy = contactSection.querySelector('.ml-form-embedContent p');
-
-        if (!signupCopy) {
-          return false;
-        }
-
-        signupCopy.textContent = replacementText;
-        return true;
-      }
-
-      if (updateMailerLiteCopy()) {
-        return;
-      }
-
-      const observer = new MutationObserver(function () {
-        if (updateMailerLiteCopy()) {
-          observer.disconnect();
-        }
-      });
-
-      observer.observe(contactSection, { childList: true, subtree: true });
-    });
-  </script>
-  <!-- End MailerLite Universal -->
 </head>
 
 <body>
@@ -544,46 +342,20 @@
       <div class="site-title">Mimi &amp; Friends</div>
     </div>
     <nav>
-      <a href="#book">The Book</a>
-      <a href="#about">About Mimi</a>
+      <a href="index.html#book">The Book</a>
+      <a href="index.html#about">About Mimi</a>
       <a href="preview.html">Preview</a>
-      <a href="wheretobuy.html">Where to Buy</a>
+      <a href="wheretobuy.html" aria-current="page">Where to Buy</a>
       <a href="covers.html">Covers</a>
       <a href="press.html">Press</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-title">
-        <p class="availability-note">Available September 2026</p>
-        <h1>There's A Dinosaur Knocking On My Door</h1>
-      </div>
-      <div class="hero-copy">
-        <p class="tagline">A joyful Shabbat board book for little ones, paired with Mimi's singalong performance of the
-          dinosaur song that inspired the story.</p>
-        <p class="hero-note">Want to hear how the song has traveled? Explore the <a href="covers.html">community
-            covers</a>
-          shared by families, schools, synagogues, and musicians.</p>
-        <div class="hero-actions">
-          <a class="cta" href="#book">Learn More</a>
-        </div>
-      </div>
-      <div class="hero-media">
-        <div class="video-card">
-          <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/sGDxytyADPY?rel=0"
-              title="Mimi singing the dinosaur song"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-          <p class="video-caption">Sing along with Mimi, then scroll down to explore the book and learn more about the
-            story behind it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="page-hero">
+    <h1>Where to Buy</h1>
+    <p>There's A Dinosaur Knocking at My Door arrives September 1, 2026 — and you can pre-order your copy today.</p>
+  </div>
 
   <div class="wave">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60">
@@ -591,65 +363,71 @@
     </svg>
   </div>
 
-  <section class="book-section" id="book">
-    <img src="images/cover.png" alt="Book Cover">
-    <div class="book-text">
-      <h2 id="about-the-book">About the Book</h2>
-      <p class="availability-note">Available September 2026</p>
-      <p>
-        When a friendly dinosaur shows up at your door ready to celebrate Shabbat,
-        the fun is just beginning! <em>There's A Dinosaur Knocking On My Door</em>
-        brings the warmth and joy of Shabbat to life through playful adapted lyrics,
-        vibrant illustrations, and a dinosaur who just wants to be part of the celebration.
+  <!-- ===================== PRE-ORDER ===================== -->
+  <section class="preorder-section">
+    <div class="preorder-inner">
+      <span class="badge">Pre-order now · Ships the week of Sept 1</span>
+      <h2>Pre-order the board book</h2>
+      <p class="lead">A joyful, call-and-response celebration of Shabbat for toddlers, illustrated by Maureen Arnow.
+        Your copy ships the week of September 1, 2026 — just in time for the new year.</p>
+      <div class="price">$18</div>
+
+      <!-- TODO: replace href below with your Square (or Stripe) checkout link -->
+      <a class="btn" href="REPLACE-WITH-YOUR-SQUARE-CHECKOUT-LINK">Pre-order — $18</a>
+      <div class="ships-note">Charged today · Ships the week of September 1, 2026</div>
+
+      <p class="secondary">Not ready yet? <a href="index.html#contact">Keep me posted</a> and we'll email you the
+        moment it's available.</p>
+
+      <p class="retail-note">Also coming to Amazon and select Judaica bookstores and synagogue gift shops in September.
       </p>
-      <p>
-        Perfect for toddlers and young children, this board book makes Shabbat
-        something kids will look forward to all week long.
-      </p>
-      <a class="book-preview-link" href="preview.html">Preview the book</a>
-      <div class="credits">
-        <span>Written</span> by Mimi Greisman<br>
-        <span>Illustrated</span> by Maureen Arnow<br>
-        <span>Original Music &amp; Lyrics</span> by Linda Arnold<br>
-      </div>
     </div>
   </section>
 
-  <section class="about-section" id="about">
-    <div class="about-inner">
-      <img class="mimi-photo" src="images/Mimi.jpg" alt="Mimi Greisman">
-      <div class="about-text">
-        <h2>About Mimi</h2>
-        <p>
-          Mimi Greisman is a children's author, musician, and educator with a lifelong
-          passion for bringing Jewish traditions to life for young children.
-        </p>
-        <p>
-          Inspired by the music of Linda Arnold, Mimi adapted the lyrics to weave
-          the spirit of Shabbat into a story that families will return to again and again.
-        </p>
-        <p>
-          She lives in San Francisco with her family — and occasionally a dinosaur or two.
-        </p>
+  <!-- ===================== BULK / EDUCATOR ===================== -->
+  <section class="bulk-section">
+    <div class="bulk-inner">
+      <h2>For schools, synagogues &amp; gift shops</h2>
+      <p>Bringing the Shabbat dinosaur to your families? We offer special rates for bulk and educator orders — a
+        perfect welcome gift for new families at the start of the year.</p>
+
+      <div class="tiers">
+        <div class="tier">
+          <div class="qty">10–24</div>
+          <div class="each">$15</div>
+        </div>
+        <div class="tier">
+          <div class="qty">25–49</div>
+          <div class="each">$13</div>
+        </div>
+        <div class="tier">
+          <div class="qty">50–99</div>
+          <div class="each">$12</div>
+        </div>
+        <div class="tier">
+          <div class="qty">100+</div>
+          <div class="each">$11</div>
+        </div>
       </div>
+      <div class="bulk-ship">Free shipping on orders of 25 or more.</div>
+
+      <a class="btn"
+        href="mailto:irving@mimiandfriends.com?subject=Bulk%20order%20%E2%80%94%20Dinosaur%20board%20book">Request
+        Bulk Pricing</a>
     </div>
   </section>
 
-  <section class="contact-section" id="contact">
-    <h2>Get Notified When the Book Launches<span class="launch-date">September 2026</span></h2>
-    <p>
-      Join the mailing list for launch updates, book news, and future Mimi &amp; Friends projects.
-      Sign up now so you hear about it as soon as the book is available.
-    </p>
-    <p class="contact-secondary">For press and wholesale inquiries, email <a
-        href="mailto:irving@mimiandfriends.com">irving@mimiandfriends.com</a>.</p>
-    <div class="ml-embedded" data-form="ZRz3wl"></div>
+  <!-- ===================== PRESS CREDENTIAL ===================== -->
+  <section class="press-strip">
+    <div class="quote">&ldquo;She's the Shabbat dinosaur knocking at your door.&rdquo;</div>
+    <div class="source">As featured in
+      <a href="https://jweekly.com/2026/06/23/shes-the-shabbat-dinosaur-knocking-on-your-door-knocking-1-2-3/"
+        target="_blank" rel="noopener">J. The Jewish News of Northern California</a>
+    </div>
   </section>
 
   <footer>
     <p>© 2026 Mimi Greisman · mimiandfriends.com</p>
-    <p><a href="press.html">Press resources and sell sheet</a></p>
-    <p>Press &amp; wholesale inquiries: <a href="mailto:irving@mimiandfriends.com">irving@mimiandfriends.com</a></p>
   </footer>
 
 </body>
