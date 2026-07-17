@@ -129,6 +129,18 @@
       font-weight: 800;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 0.1s;
+    }
+
+    a.badge:hover,
+    a.badge:focus-visible {
+      color: #4b3a00;
+      text-decoration: none;
+    }
+
+    a.badge:active {
+      transform: translateY(1px);
     }
 
     .preorder-inner h2 {
@@ -232,6 +244,31 @@
       margin-bottom: 24px;
     }
 
+    /* ABOUT SECTION */
+    .about-section {
+      background: #fff;
+      padding: 68px 40px 76px;
+    }
+
+    .about-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-inner h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      color: var(--brand-blue);
+      margin-bottom: 18px;
+    }
+
+    .about-inner p {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.85;
+    }
+
     .tiers {
       display: flex;
       flex-wrap: wrap;
@@ -330,6 +367,10 @@
       .bulk-section {
         padding: 52px 24px 60px;
       }
+
+      .about-section {
+        padding: 56px 24px 64px;
+      }
     }
   </style>
 </head>
@@ -366,7 +407,7 @@
   <!-- ===================== PRE-ORDER ===================== -->
   <section class="preorder-section">
     <div class="preorder-inner">
-      <span class="badge">Pre-order now · Ships the week of Sept 1</span>
+      <a class="badge" href="https://a46dd1-nv.myshopify.com/products/theres-a-dinosaur-knocking-at-my-door">Pre-order now · Ships the week of Sept 1</a>
       <h2>Pre-order the board book</h2>
       <p class="lead">A joyful, call-and-response celebration of Shabbat for toddlers, illustrated by Maureen Arnow.
         Your copy ships the week of September 1, 2026 — just in time for the new year.</p>
@@ -391,6 +432,17 @@
       <a class="btn"
         href="mailto:irving@mimiandfriends.com?subject=Bulk%20order%20%E2%80%94%20Dinosaur%20board%20book">Request
         Bulk Pricing</a>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <h2>About Mimi</h2>
+      <p>Mimi Greisman, M.A. Ed., is a Jewish Childhood and Family Educator and recipient of the Helen Diller Family
+        Award for Excellence in Jewish Education. For more than three decades she has created Jewish programs for
+        families with young children, and her Shabbat adaptation of Linda Arnold's &ldquo;There's A Dinosaur Knocking At My
+        Door&rdquo; has been sung in Jewish preschools from the Bay Area to the U.K. Her first board book brings that beloved
+        song to Shabbat tables everywhere.</p>
     </div>
   </section>
 
