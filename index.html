@@ -269,6 +269,53 @@
       line-height: 1.85;
     }
 
+    /* SONG SECTION */
+    .song-section {
+      background: var(--paper-blue);
+      padding: 68px 40px 76px;
+    }
+
+    .song-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .song-inner h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      color: var(--brand-blue);
+      margin-bottom: 18px;
+    }
+
+    .song-inner p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.85;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding-top: 56.25%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 44, 144, 0.18);
+      background: #000;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .tiers {
       display: flex;
       flex-wrap: wrap;
@@ -371,6 +418,10 @@
       .about-section {
         padding: 56px 24px 64px;
       }
+
+      .song-section {
+        padding: 56px 24px 64px;
+      }
     }
   </style>
 </head>
@@ -384,6 +435,7 @@
     </div>
     <nav>
       <a href="index.html#book">The Book</a>
+      <a href="index.html#song">The Song</a>
       <a href="index.html#about">About Mimi</a>
       <a href="preview.html">Preview</a>
       <a href="wheretobuy.html" aria-current="page">Where to Buy</a>
@@ -443,6 +495,20 @@
         families with young children, and her Shabbat adaptation of Linda Arnold's &ldquo;There's A Dinosaur Knocking At My
         Door&rdquo; has been sung in Jewish preschools from the Bay Area to the U.K. Her first board book brings that beloved
         song to Shabbat tables everywhere.</p>
+    </div>
+  </section>
+
+  <section class="song-section" id="song">
+    <div class="song-inner">
+      <h2>The Song</h2>
+      <p>Before it became a board book, this joyful Shabbat story lived as a song sung by families, teachers, and
+        children for decades. This video shares the song that inspired the book.</p>
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/sGDxytyADPY"
+          title="There's A Dinosaur Knocking At My Door on YouTube"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
